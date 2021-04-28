@@ -9,6 +9,7 @@ html {
     width: 80%;
     max-width: 500px;
     scroll-snap-type: y mandatory;
+    border-radius: 20px;
 }
 
 .app {
