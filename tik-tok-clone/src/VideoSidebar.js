@@ -4,7 +4,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ChatIcon from '@material-ui/icons/Chat';
 import ShareIcon from '@material-ui/icons/Share';
 import './VideoSidebar.css';
-function Videosidebar(props) {
+function Videosidebar({likes, comments, shares}) {
     const [liked, setLiked] = useState(false);
     return (
 
@@ -12,18 +12,18 @@ function Videosidebar(props) {
             <div className="videoSidebar__button">
                 
                 {liked ? (
-                    <FavoriteIcon onClick={(e) => setLiked(false)} />
-                ) : (<FavoriteBorderIcon onClick={(e) => setLiked(true)}/>)
+                    <FavoriteIcon fontSize="large" onClick={(e) => setLiked(false)} />
+                ) : (<FavoriteBorderIcon fontSize="large" onClick={(e) => setLiked(true)}/>)
                 }
-                <p>2110</p>
+                <p>{liked ? likes + 1 : likes}</p>
             </div>
             <div className="videoSidebar__button">
-                <ChatIcon />
-                <p>251</p>
+                <ChatIcon fontSize="large" />
+                <p>{comments}</p>
             </div>
             <div className="videoSidebar__button">
-                <ShareIcon />
-                <p>79</p>
+                <ShareIcon fontSize="large" />
+                <p>{shares}</p>
             </div>
         </div>
     );
